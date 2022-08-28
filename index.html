@@ -129,7 +129,7 @@
         <!-- Fitur tambah tugas -->
         <div class="hidden container-respons-add-tugas">
           <section class="tambah-tugas ms-4">
-            <input type="radio" name="tugas" id="" checked="checked">
+            <input type="radio" name="add-tugas" id="" checked="checked" />
             <h6 class="nama-tugas created mx-2 mt-2">
               <input type="text" placeholder="Masukan nama tugas" />
             </h6>
@@ -149,7 +149,7 @@
               class="btn-chek d-flex justify-content-center align-items-center"
             >
               <img src="../asset/Plus.svg" alt="" />
-              <p class="mt-3 ms-1">Tambah</p>
+              <p class="mt-3 ms-1 d-none d-sm-block">Tambah</p>
             </button>
           </div>
         </div>
@@ -163,6 +163,16 @@
               <div class="created d-md-block d-none">Hari ini</div>
               <div class="titik-tiga hidden">
                 <img class="" src="../asset/more-vertical.svg" alt="" />
+                <div class="action-titik-tiga hidden">
+                  <div class="item-titik-tiga d-flex align-items-center edit">
+                    <img src="asset/Edit.svg" alt="" />
+                    <p class="ms-3 d-flex align-i">Rename task</p>
+                  </div>
+                  <div class="item-titik-tiga d-flex align-items-center delete">
+                    <img src="asset/Delete.svg" alt="" />
+                    <p class="ms-3 d-flex align-i">Delete task</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -303,12 +313,74 @@
           <hr />
           <div class="content-footer-main">
             <div class="container-icon">
-              <img class="icon-dropdown" src="asset/arrow-right.svg" alt="" />
+              <img class="icon-dropright" src="asset/arrow-right.svg" alt="" />
               <img class="icon-dropup hidden" src="asset/arrow-up.svg" alt="" />
             </div>
             <p class="desc-footer-main mx-2 mt-3">
               Terselesaikan <span class="colored">( 3 tugas )</span>
             </p>
+          </div>
+          <div class="see-complited hidden">
+            <div
+              class="complited-tugas d-flex justify-content-between"
+            >
+              <div class="right-complited d-flex align-items-center my-1">
+                <div class="round mt-1">
+                    <input type="checkbox" checked id="complit" />
+                    <label for="complit"></label>
+                </div>
+                <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
+              </div>
+
+              <div class="container-icon">
+                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
+                <img
+                  class="icon-dropup hidden"
+                  src="asset/arrow-up.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div
+              class="complited-tugas d-flex justify-content-between"
+            >
+              <div class="right-complited d-flex align-items-center my-1">
+                <div class="round">
+                    <input type="checkbox" checked id="complit2" />
+                    <label for="complit2"></label>
+                  </div>
+                <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
+              </div>
+
+              <div class="container-icon">
+                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
+                <img
+                  class="icon-dropup hidden"
+                  src="asset/arrow-up.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div
+              class="complited-tugas d-flex justify-content-between"
+            >
+              <div class="right-complited d-flex align-items-center my-1">
+                <div class="round">
+                    <input type="checkbox" checked id="comlit3" />
+                    <label for="comlit3"></label>
+                  </div>
+                <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
+              </div>
+
+              <div class="container-icon">
+                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
+                <img
+                  class="icon-dropup hidden"
+                  src="asset/arrow-up.svg"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </footer>
       </div>
