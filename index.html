@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- link fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- link style -->
+    <link rel="stylesheet" href="full-style.css" />
+
+    <title>The Project</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container-fluid pt-3 pb-2 px-5">
+        <div class="row d-flex justify-content-between align-items-center">
+          <div class="right-content col-4">
+            <h1>waz<span class="colored">wez</span>.</h1>
+          </div>
+
+          <div class="left-content col-4 col-md-6 col-lg-4">
+            <div class="icon-notification me-2">
+              <div>
+                <img src="../asset/Notification.svg" alt="" />
+              </div>
+            </div>
+            <div class="user">
+              <div class="icon-user">
+                <img src="../asset/user-icon.jpg" alt="" />
+              </div>
+              <span class="name-user d-none d-md-block">Faisal Chakiki</span>
+              <div class="dropdown-user">
+                <div class="container-icon">
+                  <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
+                  <img
+                    class="icon-dropup hidden"
+                    src="asset/arrow-up.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Main Page -->
+    <main>
+      <div class="container col-lg-6 col-md-8 col-10">
+        <p class="taks-main-first">MY TASKS</p>
+
+        <section class="flex-content-first">
+          <h4>To Do List</h4>
+
+          <button class="button-add-tugas">
+            <img src="../asset/add.svg" alt="" />
+            <span class="task-add-tugas mx-1 d-none d-md-block"
+              >Tambah tugas</span
+            >
+          </button>
+        </section>
+
+        <p class="taks-main-second">Buat list tugas harian saya</p>
+
+        <div class="container-sort-by">
+          <section class="flex-content-second mb-3">
+            <p class="taks-main-third mt-1">Sort By</p>
+            <button class="orange button-by-tanggal me-2 me-md-none border-2">
+              <span class="task-by-tanggal mx-2 d-none d-md-block"
+                >By Tanggal</span
+              >
+              <div class="container-icon">
+                <img class="icon-dropdown" src="asset/arrow-down.svg" alt="" />
+                <img
+                  class="icon-dropup hidden"
+                  src="asset/arrow-up.svg"
+                  alt=""
+                />
+              </div>
+            </button>
+          </section>
+          <!-- Fitur Sort BY -->
+          <div class="hidden respons-sort-by">
+            <div class="content">
+              <label for="sort-by-1" class="taks-content-sort-by"
+                >By Tanggal</label
+              >
+              <input
+                type="radio"
+                name="sort-by"
+                id="sort-by-1"
+                checked="checked"
+              />
+            </div>
+            <div class="content">
+              <label for="sort-by-2" class="taks-content-sort-by"
+                >By Time</label
+              >
+              <input type="radio" name="sort-by" id="sort-by-2" />
+            </div>
+            <div class="content">
+              <label for="sort-by-3" class="taks-content-sort-by"
+                >Terbaru</label
+              >
+              <input type="radio" name="sort-by" id="sort-by-3" />
+            </div>
+          </div>
+          <!-- End.... -->
+        </div>
+
+        <!-- Fitur tambah tugas -->
+        <div class="hidden container-respons-add-tugas">
+          <section class="tambah-tugas ms-4">
+            <input type="radio" name="tugas" id="" checked="checked">
+            <h6 class="nama-tugas created mx-2 mt-2">
+              <input type="text" placeholder="Masukan nama tugas" />
+            </h6>
+          </section>
+          <div class="add-desc-tugas ms-5">
+            <img class="mb-3" src="../asset/menu.svg" alt="" />
+            <p class="ms-2">
+              <input type="text" placeholder="Deskripsi Tugas (Optional)" />
+            </p>
+          </div>
+          <div class="add-time-tugas ms-5">
+            <img class="mb-3" src="../asset/calendar.svg" alt="" />
+            <p class="ms-2">
+              <input type="text" placeholder="Tanggal & Waktu" />
+            </p>
+            <button
+              class="btn-chek d-flex justify-content-center align-items-center"
+            >
+              <img src="../asset/Plus.svg" alt="" />
+              <p class="mt-3 ms-1">Tambah</p>
+            </button>
+          </div>
+        </div>
+        <!-- End Tambahan Items -->
+
+        <div class="container-tugas">
+          <section class="tugas mt-1">
+            <div class="content-tugas">
+              <input type="radio" name="tugas" id="" />
+              <h6 class="nama-tugas mx-2 mt-2">Product Design</h6>
+              <div class="created d-md-block d-none">Hari ini</div>
+              <div class="titik-tiga hidden">
+                <img class="" src="../asset/more-vertical.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="drop-tugas me-3">
+              <div class="container-icon">
+                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
+                <img
+                  class="icon-dropup hidden"
+                  src="asset/arrow-up.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </section>
+
+          <div class="desc-tugas ms-4">Tugas untuk design team</div>
+          <!-- Uncheklist -->
+          <div class="uncheklist hidden p-3">
+            <div
+              class="header-chek mb-1 d-flex justify-content-between align-items-center"
+            >
+              <h6>Subtask</h6>
+              <button
+                class="btn-chek d-flex justify-content-center align-items-center"
+              >
+                <img src="../asset/Plus.svg" alt="" />
+                <p class="mt-3 ms-1">Tambah</p>
+              </button>
+            </div>
+            <div class="content-chek">
+              <div class="chek-tugas">
+                <div class="right-chek">
+                  <div class="round">
+                    <input type="checkbox" checked id="checkbox1" />
+                    <label for="checkbox1"></label>
+                  </div>
+
+                  <h6 class="nama-tugas mx-2 mt-2">Design Review</h6>
+                </div>
+                <div class="left-chek">
+                  <img src="../asset/trash.svg" alt="" />
+                </div>
+              </div>
+
+              <div class="chek-tugas">
+                <div class="right-chek">
+                  <div class="round">
+                    <input type="checkbox" checked id="checkbox2" />
+                    <label for="checkbox2"></label>
+                  </div>
+
+                  <h6 class="nama-tugas mx-2 mt-2">Low-Fidelity design</h6>
+                </div>
+                <div class="left-chek">
+                  <img src="../asset/trash.svg" alt="" />
+                </div>
+              </div>
+
+              <div class="chek-tugas">
+                <div class="right-chek">
+                  <div class="round">
+                    <input type="checkbox" checked id="checkbox3" />
+                    <label for="checkbox3"></label>
+                  </div>
+
+                  <h6 class="nama-tugas mx-2 mt-2">High-Fidelity design</h6>
+                </div>
+                <div class="left-chek">
+                  <img src="../asset/trash.svg" alt="" />
+                </div>
+              </div>
+
+              <div class="chek-tugas">
+                <div class="right-chek">
+                  <div class="round">
+                    <input type="checkbox" checked id="checkbox4" />
+                    <label for="checkbox4"></label>
+                  </div>
+
+                  <h6 class="nama-tugas mx-2 mt-2">Design Guidelines</h6>
+                </div>
+                <div class="left-chek">
+                  <img src="../asset/trash.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Uncheklist -->
+        </div>
+
+        <div class="container-tugas">
+          <section class="tugas mt-1">
+            <div class="content-tugas">
+              <input type="radio" name="tugas" id="" />
+              <h6 class="nama-tugas mx-2 mt-2">Development</h6>
+              <div class="created d-md-block d-none">15 Juni 2022</div>
+            </div>
+
+            <div class="drop-tugas me-3">
+              <div class="container-icon">
+                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
+                <img
+                  class="icon-dropup hidden"
+                  src="asset/arrow-up.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </section>
+
+          <div class="desc-tugas ms-4"></div>
+        </div>
+
+        <div class="container-tugas">
+          <section class="tugas mt-1">
+            <div class="content-tugas">
+              <input type="radio" name="tugas" id="" />
+              <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
+              <div class="created d-md-block d-none">20 Juni 2022</div>
+            </div>
+
+            <div class="drop-tugas me-3">
+              <div class="container-icon">
+                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
+                <img
+                  class="icon-dropup hidden"
+                  src="asset/arrow-up.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </section>
+
+          <div class="desc-tugas ms-4"></div>
+        </div>
+
+        <footer class="footer-main">
+          <hr />
+          <div class="content-footer-main">
+            <div class="container-icon">
+              <img class="icon-dropdown" src="asset/arrow-right.svg" alt="" />
+              <img class="icon-dropup hidden" src="asset/arrow-up.svg" alt="" />
+            </div>
+            <p class="desc-footer-main mx-2 mt-3">
+              Terselesaikan <span class="colored">( 3 tugas )</span>
+            </p>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <!-- End Main -->
+    <script src="script.js"></script>
+  </body>
+</html>
