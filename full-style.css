@@ -5,7 +5,6 @@
   /* border: 1px solid; */
 }
 body {
-  /* height: 2000px; */
   font-family: "Poppins", sans-serif;
 }
 
@@ -51,7 +50,7 @@ img {
   /* border: 1px solid; */
   width: 65%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 .left-content .icon-user {
@@ -359,30 +358,29 @@ main .container-respons-add-tugas input[type="text"] {
 .round input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
-.titik-tiga{
+.titik-tiga {
   position: relative;
 }
 .action-titik-tiga {
   position: absolute;
   top: 30px;
-  width:12rem;
-  height:6rem;
+  width: 12rem;
+  height: 6rem;
   border: 1px solid #ccced2;
   border-radius: 8px;
   background-color: white;
   z-index: 11;
   padding: 3px 20px;
 }
-.action-titik-tiga .item-titik-tiga:nth-child(1){
-  margin-bottom:-20px;
+.action-titik-tiga .item-titik-tiga:nth-child(1) {
+  margin-bottom: -20px;
 }
-.action-titik-tiga p{
+.action-titik-tiga p {
   margin: 20px 0 10px;
 }
 /* See Complited */
 .complited-tugas h6 {
   font-weight: 600;
-  text-decoration: line-through;
 }
 .complited-tugas input[type="radio"] {
   width: 25px;
@@ -401,4 +399,7 @@ main .container-respons-add-tugas input[type="text"] {
 .abu-abu {
   border: 1px solid #7a7f83;
   color: #7a7f83;
+}
+.line-through {
+  text-decoration: line-through;
 }

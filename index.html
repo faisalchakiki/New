@@ -42,10 +42,12 @@
               </div>
             </div>
             <div class="user">
-              <div class="icon-user">
+              <div class="icon-user me-1">
                 <img src="../asset/user-icon.jpg" alt="" />
               </div>
-              <span class="name-user d-none d-md-block">Faisal Chakiki</span>
+              <span class="name-user d-none d-md-block mx-1"
+                >Faisal Chakiki</span
+              >
               <div class="dropdown-user">
                 <div class="container-icon">
                   <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
@@ -88,9 +90,9 @@
                 >By Tanggal</span
               >
               <div class="container-icon">
-                <img class="icon-dropdown" src="asset/arrow-down.svg" alt="" />
+                <img class="dropdown-btn" src="asset/arrow-down.svg" alt="" />
                 <img
-                  class="icon-dropup hidden"
+                  class="dropup-btn hidden"
                   src="asset/arrow-up.svg"
                   alt=""
                 />
@@ -107,7 +109,7 @@
                 type="radio"
                 name="sort-by"
                 id="sort-by-1"
-                checked="checked"
+              ="
               />
             </div>
             <div class="content">
@@ -129,7 +131,7 @@
         <!-- Fitur tambah tugas -->
         <div class="hidden container-respons-add-tugas">
           <section class="tambah-tugas ms-4">
-            <input type="radio" name="add-tugas" id="" checked="checked" />
+            <input type="radio" name="add-tugas" id=""=" />
             <h6 class="nama-tugas created mx-2 mt-2">
               <input type="text" placeholder="Masukan nama tugas" />
             </h6>
@@ -155,11 +157,14 @@
         </div>
         <!-- End Tambahan Items -->
 
-        <div class="container-tugas">
+        <div class="container-tugas" id="tugas-1">
           <section class="tugas mt-1">
             <div class="content-tugas">
-              <input type="radio" name="tugas" id="" />
-              <h6 class="nama-tugas mx-2 mt-2">Product Design</h6>
+              <div class="round">
+                <input class="click-checkbox" type="checkbox" id="tugas1" />
+                <label for="tugas1"></label>
+              </div>
+              <h6 class="nama-tugas-ku mx-2 mt-2">Product Design</h6>
               <div class="created d-md-block d-none">Hari ini</div>
               <div class="titik-tiga hidden">
                 <img class="" src="../asset/more-vertical.svg" alt="" />
@@ -190,7 +195,7 @@
 
           <div class="desc-tugas ms-4">Tugas untuk design team</div>
           <!-- Uncheklist -->
-          <div class="uncheklist hidden p-3">
+          <div class="uncheklist p-3 hidden">
             <div
               class="header-chek mb-1 d-flex justify-content-between align-items-center"
             >
@@ -206,7 +211,7 @@
               <div class="chek-tugas">
                 <div class="right-chek">
                   <div class="round">
-                    <input type="checkbox" checked id="checkbox1" />
+                    <input class="click-checkbox" type="checkbox" id="checkbox1" />
                     <label for="checkbox1"></label>
                   </div>
 
@@ -220,7 +225,7 @@
               <div class="chek-tugas">
                 <div class="right-chek">
                   <div class="round">
-                    <input type="checkbox" checked id="checkbox2" />
+                    <input class="click-checkbox" type="checkbox" id="checkbox2" />
                     <label for="checkbox2"></label>
                   </div>
 
@@ -234,7 +239,7 @@
               <div class="chek-tugas">
                 <div class="right-chek">
                   <div class="round">
-                    <input type="checkbox" checked id="checkbox3" />
+                    <input class="click-checkbox" type="checkbox" id="checkbox3" />
                     <label for="checkbox3"></label>
                   </div>
 
@@ -248,7 +253,7 @@
               <div class="chek-tugas">
                 <div class="right-chek">
                   <div class="round">
-                    <input type="checkbox" checked id="checkbox4" />
+                    <input class="click-checkbox" type="checkbox" id="checkbox4" />
                     <label for="checkbox4"></label>
                   </div>
 
@@ -263,10 +268,13 @@
           <!-- End Uncheklist -->
         </div>
 
-        <div class="container-tugas">
+        <div class="container-tugas" id="tugas-2">
           <section class="tugas mt-1">
             <div class="content-tugas">
-              <input type="radio" name="tugas" id="" />
+              <div class="round">
+                <input class="click-checkbox" type="checkbox" id="tugas2" />
+                <label for="tugas2"></label>
+              </div>
               <h6 class="nama-tugas mx-2 mt-2">Development</h6>
               <div class="created d-md-block d-none">15 Juni 2022</div>
             </div>
@@ -286,10 +294,13 @@
           <div class="desc-tugas ms-4"></div>
         </div>
 
-        <div class="container-tugas">
+        <div class="container-tugas" id="tugas-3">
           <section class="tugas mt-1">
             <div class="content-tugas">
-              <input type="radio" name="tugas" id="" />
+              <div class="round">
+                <input class="click-checkbox" type="checkbox" id="tugas3" />
+                <label for="tugas3"></label>
+              </div>
               <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
               <div class="created d-md-block d-none">20 Juni 2022</div>
             </div>
@@ -313,7 +324,7 @@
           <hr />
           <div class="content-footer-main">
             <div class="container-icon">
-              <img class="icon-dropright" src="asset/arrow-right.svg" alt="" />
+              <img class="icon-dropdown" src="asset/arrow-right.svg" alt="" />
               <img class="icon-dropup hidden" src="asset/arrow-up.svg" alt="" />
             </div>
             <p class="desc-footer-main mx-2 mt-3">
@@ -321,13 +332,11 @@
             </p>
           </div>
           <div class="see-complited hidden">
-            <div
-              class="complited-tugas d-flex justify-content-between"
-            >
+            <div class="complited-tugas d-flex justify-content-between">
               <div class="right-complited d-flex align-items-center my-1">
                 <div class="round mt-1">
-                    <input type="checkbox" checked id="complit" />
-                    <label for="complit"></label>
+                  <input class="click-checkbox" type="checkbox" id="complit" />
+                  <label for="complit"></label>
                 </div>
                 <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
               </div>
@@ -341,14 +350,12 @@
                 />
               </div>
             </div>
-            <div
-              class="complited-tugas d-flex justify-content-between"
-            >
+            <div class="complited-tugas d-flex justify-content-between">
               <div class="right-complited d-flex align-items-center my-1">
                 <div class="round">
-                    <input type="checkbox" checked id="complit2" />
-                    <label for="complit2"></label>
-                  </div>
+                  <input class="click-checkbox" type="checkbox" id="complit2" />
+                  <label for="complit2"></label>
+                </div>
                 <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
               </div>
 
@@ -361,14 +368,12 @@
                 />
               </div>
             </div>
-            <div
-              class="complited-tugas d-flex justify-content-between"
-            >
+            <div class="complited-tugas d-flex justify-content-between">
               <div class="right-complited d-flex align-items-center my-1">
                 <div class="round">
-                    <input type="checkbox" checked id="comlit3" />
-                    <label for="comlit3"></label>
-                  </div>
+                  <input class="click-checkbox" type="checkbox" id="comlit3" />
+                  <label for="comlit3"></label>
+                </div>
                 <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
               </div>
 

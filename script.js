@@ -13,10 +13,10 @@ clickByTanggal.addEventListener("click", function () {
   clickByTanggal.classList.toggle("abu-abu");
   const textDemoSortBy = document.querySelector(".respons-sort-by");
   textDemoSortBy.classList.toggle("hidden");
-  const arrowIcon = document.querySelectorAll(".icon-dropdown");
-  arrowIcon[1].classList.toggle("hidden");
-  const arrowIcons = document.querySelectorAll(".icon-dropup");
-  arrowIcons[1].classList.toggle("hidden");
+  const arrowIcon = document.querySelector(".dropdown-btn");
+  arrowIcon.classList.toggle("hidden");
+  const arrowIcons = document.querySelector(".dropup-btn");
+  arrowIcons.classList.toggle("hidden");
 });
 
 // Action titik Tiga
@@ -28,11 +28,11 @@ titikTiga.addEventListener("click", function () {
 
 // Action Uncheklist Tugas
 const clickDropdownTugas = document.querySelectorAll(".icon-dropdown");
-clickDropdownTugas[2].addEventListener("click", function () {
+clickDropdownTugas[1].addEventListener("click", function () {
   const arrowIcon = document.querySelectorAll(".icon-dropdown");
-  arrowIcon[2].classList.toggle("hidden");
+  arrowIcon[1].classList.toggle("hidden");
   const arrowIcons = document.querySelectorAll(".icon-dropup");
-  arrowIcons[2].classList.toggle("hidden");
+  arrowIcons[1].classList.toggle("hidden");
   const Unchecklist = document.querySelector(".uncheklist");
   Unchecklist.classList.toggle("hidden");
   const titikTiga = document.querySelector(".titik-tiga");
@@ -40,11 +40,11 @@ clickDropdownTugas[2].addEventListener("click", function () {
 });
 
 const clickDropUpTugas = document.querySelectorAll(".icon-dropup");
-clickDropUpTugas[2].addEventListener("click", function () {
+clickDropUpTugas[1].addEventListener("click", function () {
   const arrowIcon = document.querySelectorAll(".icon-dropdown");
-  arrowIcon[2].classList.toggle("hidden");
+  arrowIcon[1].classList.toggle("hidden");
   const arrowIcons = document.querySelectorAll(".icon-dropup");
-  arrowIcons[2].classList.toggle("hidden");
+  arrowIcons[1].classList.toggle("hidden");
   const Unchecklist = document.querySelector(".uncheklist");
   Unchecklist.classList.toggle("hidden");
   const titikTiga = document.querySelector(".titik-tiga");
@@ -58,23 +58,58 @@ clickDropUpTugas[2].addEventListener("click", function () {
 //     }
 // }
 
+// const DropdownTugas = document.querySelectorAll(".icon-dropdown");
+// for (var i = 0; i < DropdownTugas.length; i++) {
+//   DropdownTugas[i].addEventListener("click", function () {
+//     const DropupTugas = document.querySelectorAll(".icon-dropup");
+//     if (this.classList.contains('hidden') === false) {
+//       this.classList.toggle("hidden")
+//       DropupTugas[i].classList.toggle("hidden")
+//     } else {
+//       this.classList.toggle("hidden")
+//       DropupTugas[i].classList.toggle("hidden")
+//     }
+//   });
+// }
+
 // Action See Complited
-const clickComplit = document.querySelector(".icon-dropright");
-clickComplit.addEventListener("click", function () {
-  const arrowIcon = document.querySelector(".icon-dropright");
-  arrowIcon.classList.toggle("hidden");
+const clickComplit = document.querySelectorAll(".icon-dropdown");
+clickComplit[4].addEventListener("click", function () {
+  const arrowIcon = document.querySelectorAll(".icon-dropdown");
+  arrowIcon[4].classList.toggle("hidden");
   const arrowIcons = document.querySelectorAll(".icon-dropup");
-  arrowIcons[5].classList.toggle("hidden");
+  arrowIcons[4].classList.toggle("hidden");
   const hiddShow = document.querySelector(".see-complited");
   hiddShow.classList.toggle("hidden");
 });
 
 const clickDropUpComplit = document.querySelectorAll(".icon-dropup");
-clickDropUpTugas[5].addEventListener("click", function () {
-  const arrowIcon = document.querySelector(".icon-dropright");
-  arrowIcon.classList.toggle("hidden");
+clickDropUpComplit[4].addEventListener("click", function () {
+  const arrowIcon = document.querySelectorAll(".icon-dropdown");
+  arrowIcon[4].classList.toggle("hidden");
   const arrowIcons = document.querySelectorAll(".icon-dropup");
-  arrowIcons[5].classList.toggle("hidden");
+  arrowIcons[4].classList.toggle("hidden");
   const hiddShow = document.querySelector(".see-complited");
   hiddShow.classList.toggle("hidden");
 });
+
+// Action Click Line through
+const inputChekbox = document.querySelectorAll(".click-checkbox");
+for (q = 0; q < inputChekbox.length; q++) {
+
+  inputChekbox[q].addEventListener("click", function () {
+
+    this.classList.toggle("line-through");
+
+    const header6 = document.getElementsByClassName(".nama-tugas").this;
+   
+      if (this.checked == true) {
+        header6.classList.add("line-through");
+      } else {
+        header6.remove("line-through");
+      }
+    
+
+  });
+
+}
