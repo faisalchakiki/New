@@ -2,14 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid; */
 }
 body {
   font-family: "Poppins", sans-serif;
 }
-
 /* Header Style */
-
 header h1 {
   font-size: 28px;
   font-weight: 600;
@@ -22,8 +19,6 @@ img {
 }
 .left-content {
   display: flex;
-  /* width: 30%; */
-  /* border: 1px solid; */
   justify-content: space-evenly;
   align-items: center;
 }
@@ -33,7 +28,6 @@ img {
   width: 30%;
   height: 28px;
   position: relative;
-  /* border: 1px solid; */
 }
 .left-content .icon-notification::after {
   content: "";
@@ -47,8 +41,6 @@ img {
   top: 0;
 }
 .left-content .user {
-  /* border: 1px solid; */
-  width: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +48,7 @@ img {
 .left-content .icon-user {
   width: 40px;
   height: 40px;
-  border: 1px solid white;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 50%;
   transition: 0.5s;
 }
@@ -75,7 +67,7 @@ img {
 }
 .left-content .icon-user img {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 50%;
   padding: 13%;
 }
@@ -83,9 +75,7 @@ img {
   font-weight: 600;
   letter-spacing: 1.5px;
 }
-
 /* Main Style */
-
 main .container {
   height: 100%;
   padding: 20px;
@@ -95,7 +85,6 @@ main .container {
   position: relative;
 }
 main h4 {
-  /* font-size: 28px; */
   font-weight: 700;
 }
 .container .taks-main-first {
@@ -139,7 +128,6 @@ main h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid; */
 }
 .flex-content-second .button-by-tanggal {
   display: flex;
@@ -187,9 +175,7 @@ main .tugas .created {
 main .desc-tugas {
   font-size: 14px;
   padding-left: 8px;
-  /* border: 1px solid; */
 }
-
 main .footer-main {
   margin-top: 20%;
   position: relative;
@@ -285,12 +271,6 @@ main .container-respons-add-tugas input[type="text"] {
   cursor: pointer;
   accent-color: #ff5f26;
 }
-
-@media screen and (max-width: 510px) {
-  .container-sort-by .respons-sort-by {
-    width: 50%;
-  }
-}
 /* Uncheklist */
 .uncheklist {
   background-color: #f5f5f5;
@@ -378,6 +358,10 @@ main .container-respons-add-tugas input[type="text"] {
 .action-titik-tiga p {
   margin: 20px 0 10px;
 }
+.action-titik-tiga .item-titik-tiga:hover{
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+}
 /* See Complited */
 .complited-tugas h6 {
   font-weight: 600;
@@ -402,4 +386,24 @@ main .container-respons-add-tugas input[type="text"] {
 }
 .line-through {
   text-decoration: line-through;
+}
+
+/* Responsive */
+@media screen and (max-width: 510px) {
+  .container-sort-by .respons-sort-by {
+    width: 50%;
+  }
+  .action-titik-tiga {
+    right: 20px;
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width:768px) {
+  .left-content {
+    justify-content:center;
+  }
+  .left-content .icon-user {
+    width: 45px;
+    height: 45px;
+  }
 }

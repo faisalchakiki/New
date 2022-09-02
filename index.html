@@ -36,25 +36,31 @@
           </div>
 
           <div class="left-content col-4 col-md-6 col-lg-4">
-            <div class="icon-notification me-2">
+            <div class="icon-notification me-2 order-1 order-sm-0">
               <div>
-                <img src="../asset/Notification.svg" alt="" />
+                <img src="../asset/Notification.svg" />
               </div>
             </div>
             <div class="user">
-              <div class="icon-user me-1">
-                <img src="../asset/user-icon.jpg" alt="" />
+              <div class="icon-user me-md-1 me-0 order-1 order-sm-0">
+                <img src="../asset/user-icon.jpg" />
               </div>
-              <span class="name-user d-none d-md-block mx-1"
+              <span class="name-user d-none d-md-block mx-1 "
                 >Faisal Chakiki</span
               >
-              <div class="dropdown-user">
+              <div class="dropdown-user  d-none d-md-block">
                 <div class="container-icon">
-                  <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
                   <img
+                    id="down-user"
+                    class="icon-dropdown"
+                    src="asset/dropdown.svg"
+                    onclick="uncheklistTugas('down-user','up-user')"
+                  />
+                  <img
+                    id="up-user"
                     class="icon-dropup hidden"
                     src="asset/arrow-up.svg"
-                    alt=""
+                    onclick="uncheklistTugas('down-user','up-user')"
                   />
                 </div>
               </div>
@@ -73,7 +79,7 @@
           <h4>To Do List</h4>
 
           <button class="button-add-tugas">
-            <img src="../asset/add.svg" alt="" />
+            <img src="../asset/add.svg" />
             <span class="task-add-tugas mx-1 d-none d-md-block"
               >Tambah tugas</span
             >
@@ -90,12 +96,8 @@
                 >By Tanggal</span
               >
               <div class="container-icon">
-                <img class="dropdown-btn" src="asset/arrow-down.svg" alt="" />
-                <img
-                  class="dropup-btn hidden"
-                  src="asset/arrow-up.svg"
-                  alt=""
-                />
+                <img class="dropdown-btn" src="asset/arrow-down.svg" />
+                <img class="dropup-btn hidden" src="asset/arrow-up.svg" />
               </div>
             </button>
           </section>
@@ -105,12 +107,7 @@
               <label for="sort-by-1" class="taks-content-sort-by"
                 >By Tanggal</label
               >
-              <input
-                type="radio"
-                name="sort-by"
-                id="sort-by-1"
-              ="
-              />
+              <input type="radio" name="sort-by" id="sort-by-1" />
             </div>
             <div class="content">
               <label for="sort-by-2" class="taks-content-sort-by"
@@ -130,30 +127,32 @@
 
         <!-- Fitur tambah tugas -->
         <div class="hidden container-respons-add-tugas">
-          <section class="tambah-tugas ms-4">
-            <input type="radio" name="add-tugas" id=""=" />
-            <h6 class="nama-tugas created mx-2 mt-2">
-              <input type="text" placeholder="Masukan nama tugas" />
-            </h6>
-          </section>
-          <div class="add-desc-tugas ms-5">
-            <img class="mb-3" src="../asset/menu.svg" alt="" />
-            <p class="ms-2">
-              <input type="text" placeholder="Deskripsi Tugas (Optional)" />
-            </p>
-          </div>
-          <div class="add-time-tugas ms-5">
-            <img class="mb-3" src="../asset/calendar.svg" alt="" />
-            <p class="ms-2">
-              <input type="text" placeholder="Tanggal & Waktu" />
-            </p>
-            <button
-              class="btn-chek d-flex justify-content-center align-items-center"
-            >
-              <img src="../asset/Plus.svg" alt="" />
-              <p class="mt-3 ms-1 d-none d-sm-block">Tambah</p>
-            </button>
-          </div>
+          <form action="https://www.youtube.com/">
+            <section class="tambah-tugas ms-4">
+              <input type="radio" name="add-tugas" id="" checked />
+              <h6 class="nama-tugas created mx-2 mt-2">
+                <input type="text" placeholder="Masukan nama tugas" required>
+              </h6>
+            </section>
+            <div class="add-desc-tugas ms-5">
+              <img class="mb-3" src="../asset/menu.svg" />
+              <p class="ms-2">
+                <input type="text" placeholder="Deskripsi Tugas (Optional)" />
+              </p>
+            </div>
+            <div class="add-time-tugas ms-5">
+              <img class="mb-3" src="../asset/calendar.svg" />
+              <p class="ms-2">
+                <input type="text" placeholder="Tanggal & Waktu" required>
+              </p>
+              <button
+                class="btn-chek d-flex justify-content-center align-items-center"
+              >
+                <img src="../asset/Plus.svg" />
+                <p class="mt-3 ms-1 d-none d-sm-block">Tambah</p>
+              </button>
+            </div>
+          </form>
         </div>
         <!-- End Tambahan Items -->
 
@@ -166,15 +165,15 @@
               </div>
               <h6 class="nama-tugas-ku mx-2 mt-2">Product Design</h6>
               <div class="created d-md-block d-none">Hari ini</div>
-              <div class="titik-tiga hidden">
-                <img class="" src="../asset/more-vertical.svg" alt="" />
+              <div id="titik-tiga-1" class="titik-tiga hidden">
+                <img class="" src="../asset/more-vertical.svg" />
                 <div class="action-titik-tiga hidden">
                   <div class="item-titik-tiga d-flex align-items-center edit">
-                    <img src="asset/Edit.svg" alt="" />
+                    <img src="asset/Edit.svg" />
                     <p class="ms-3 d-flex align-i">Rename task</p>
                   </div>
                   <div class="item-titik-tiga d-flex align-items-center delete">
-                    <img src="asset/Delete.svg" alt="" />
+                    <img src="asset/Delete.svg" />
                     <p class="ms-3 d-flex align-i">Delete task</p>
                   </div>
                 </div>
@@ -183,11 +182,17 @@
 
             <div class="drop-tugas me-3">
               <div class="container-icon">
-                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
                 <img
+                  id="down-1"
+                  class="icon-dropdown"
+                  src="asset/dropdown.svg"
+                  onclick="uncheklistTugas('down-1','up-1','unchek-tugas-1','titik-tiga-1')"
+                />
+                <img
+                  id="up-1"
                   class="icon-dropup hidden"
                   src="asset/arrow-up.svg"
-                  alt=""
+                  onclick="uncheklistTugas('down-1','up-1','unchek-tugas-1','titik-tiga-1')"
                 />
               </div>
             </div>
@@ -195,7 +200,7 @@
 
           <div class="desc-tugas ms-4">Tugas untuk design team</div>
           <!-- Uncheklist -->
-          <div class="uncheklist p-3 hidden">
+          <div id="unchek-tugas-1" class="uncheklist p-3 hidden">
             <div
               class="header-chek mb-1 d-flex justify-content-between align-items-center"
             >
@@ -203,7 +208,7 @@
               <button
                 class="btn-chek d-flex justify-content-center align-items-center"
               >
-                <img src="../asset/Plus.svg" alt="" />
+                <img src="../asset/Plus.svg" />
                 <p class="mt-3 ms-1">Tambah</p>
               </button>
             </div>
@@ -211,56 +216,82 @@
               <div class="chek-tugas">
                 <div class="right-chek">
                   <div class="round">
-                    <input class="click-checkbox" type="checkbox" id="checkbox1" />
-                    <label for="checkbox1"></label>
+                    <input
+                      class="click-checkbox"
+                      type="checkbox"
+                      id="design1"
+                      onclick="clickCoret('design1','nama-design-1')"
+                    />
+                    <label for="design1"></label>
                   </div>
 
-                  <h6 class="nama-tugas mx-2 mt-2">Design Review</h6>
+                  <h6 id="nama-design-1" class="mx-2 mt-2">Design Review</h6>
                 </div>
                 <div class="left-chek">
-                  <img src="../asset/trash.svg" alt="" />
+                  <img src="../asset/trash.svg" />
                 </div>
               </div>
 
               <div class="chek-tugas">
                 <div class="right-chek">
                   <div class="round">
-                    <input class="click-checkbox" type="checkbox" id="checkbox2" />
-                    <label for="checkbox2"></label>
+                    <input
+                      class="click-checkbox"
+                      type="checkbox"
+                      id="design2"
+                      onclick="clickCoret('design2','nama-design-2')"
+                    />
+                    <label for="design2"></label>
                   </div>
 
-                  <h6 class="nama-tugas mx-2 mt-2">Low-Fidelity design</h6>
+                  <h6 id="nama-design-2" class="mx-2 mt-2">
+                    Low-Fidelity design
+                  </h6>
                 </div>
                 <div class="left-chek">
-                  <img src="../asset/trash.svg" alt="" />
+                  <img src="../asset/trash.svg" />
                 </div>
               </div>
 
               <div class="chek-tugas">
                 <div class="right-chek">
                   <div class="round">
-                    <input class="click-checkbox" type="checkbox" id="checkbox3" />
-                    <label for="checkbox3"></label>
+                    <input
+                      class="click-checkbox"
+                      type="checkbox"
+                      id="design3"
+                      onclick="clickCoret('design3','nama-design-3')"
+                    />
+                    <label for="design3"></label>
                   </div>
 
-                  <h6 class="nama-tugas mx-2 mt-2">High-Fidelity design</h6>
+                  <h6 id="nama-design-3" class="mx-2 mt-2">
+                    High-Fidelity design
+                  </h6>
                 </div>
                 <div class="left-chek">
-                  <img src="../asset/trash.svg" alt="" />
+                  <img src="../asset/trash.svg" />
                 </div>
               </div>
 
               <div class="chek-tugas">
                 <div class="right-chek">
                   <div class="round">
-                    <input class="click-checkbox" type="checkbox" id="checkbox4" />
-                    <label for="checkbox4"></label>
+                    <input
+                      class="click-checkbox"
+                      type="checkbox"
+                      id="design4"
+                      onclick="clickCoret('design4','name-design-4')"
+                    />
+                    <label for="design4"></label>
                   </div>
 
-                  <h6 class="nama-tugas mx-2 mt-2">Design Guidelines</h6>
+                  <h6 id="name-design-4" class="mx-2 mt-2">
+                    Design Guidelines
+                  </h6>
                 </div>
                 <div class="left-chek">
-                  <img src="../asset/trash.svg" alt="" />
+                  <img src="../asset/trash.svg" />
                 </div>
               </div>
             </div>
@@ -281,11 +312,17 @@
 
             <div class="drop-tugas me-3">
               <div class="container-icon">
-                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
                 <img
+                  id="down-2"
+                  class="icon-dropdown"
+                  src="asset/dropdown.svg"
+                  onclick="uncheklistTugas('down-2','up-2')"
+                />
+                <img
+                  id="up-2"
                   class="icon-dropup hidden"
                   src="asset/arrow-up.svg"
-                  alt=""
+                  onclick="uncheklistTugas('down-2','up-2')"
                 />
               </div>
             </div>
@@ -307,11 +344,17 @@
 
             <div class="drop-tugas me-3">
               <div class="container-icon">
-                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
                 <img
+                  id="down-3"
+                  class="icon-dropdown"
+                  src="asset/dropdown.svg"
+                  onclick="uncheklistTugas('down-3','up-3')"
+                />
+                <img
+                  id="up-3"
                   class="icon-dropup hidden"
                   src="asset/arrow-up.svg"
-                  alt=""
+                  onclick="uncheklistTugas('down-3','up-3')"
                 />
               </div>
             </div>
@@ -324,65 +367,118 @@
           <hr />
           <div class="content-footer-main">
             <div class="container-icon">
-              <img class="icon-dropdown" src="asset/arrow-right.svg" alt="" />
-              <img class="icon-dropup hidden" src="asset/arrow-up.svg" alt="" />
+              <img
+                id="right-complit"
+                class="icon-dropdown"
+                src="asset/arrow-right.svg"
+                onclick="uncheklistTugas('right-complit','up-complit','see-tugas-complit')"
+              />
+              <img
+                id="up-complit"
+                class="icon-dropup hidden"
+                src="asset/arrow-up.svg"
+                onclick="uncheklistTugas('right-complit','up-complit','see-tugas-complit')"
+              />
             </div>
             <p class="desc-footer-main mx-2 mt-3">
               Terselesaikan <span class="colored">( 3 tugas )</span>
             </p>
           </div>
-          <div class="see-complited hidden">
+          <div id="see-tugas-complit" class="see-complited hidden">
             <div class="complited-tugas d-flex justify-content-between">
               <div class="right-complited d-flex align-items-center my-1">
                 <div class="round mt-1">
-                  <input class="click-checkbox" type="checkbox" id="complit" />
-                  <label for="complit"></label>
+                  <input
+                    class="click-checkbox"
+                    type="checkbox"
+                    id="complit1"
+                    checked
+                    checked
+                    onclick="clickCoret('complit1','nama-tugas-1')"
+                  />
+                  <label for="complit1"></label>
                 </div>
-                <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
+                <h6 id="nama-tugas-1" class="mx-2 mt-2 line-through">
+                  Launching Wazwez Website
+                </h6>
               </div>
 
               <div class="container-icon">
-                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
                 <img
+                  id="down-complit-1"
+                  class="icon-dropdown"
+                  src="asset/dropdown.svg"
+                  onclick="uncheklistTugas('down-complit-1','up-complit-1')"
+                />
+                <img
+                  id="up-complit-1"
                   class="icon-dropup hidden"
                   src="asset/arrow-up.svg"
-                  alt=""
+                  onclick="uncheklistTugas('down-complit-1','up-complit-1')"
                 />
               </div>
             </div>
             <div class="complited-tugas d-flex justify-content-between">
               <div class="right-complited d-flex align-items-center my-1">
                 <div class="round">
-                  <input class="click-checkbox" type="checkbox" id="complit2" />
+                  <input
+                    class="click-checkbox"
+                    type="checkbox"
+                    id="complit2"
+                    checked
+                    checked
+                    onclick="clickCoret('complit2','nama-tugas-2')"
+                  />
                   <label for="complit2"></label>
                 </div>
-                <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
+                <h6 id="nama-tugas-2" class="mx-2 mt-2 line-through">
+                  Launching Wazwez Website
+                </h6>
               </div>
 
               <div class="container-icon">
-                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
                 <img
+                  id="down-complit-2"
+                  class="icon-dropdown"
+                  src="asset/dropdown.svg"
+                  onclick="uncheklistTugas('down-complit-2','up-complit-2')"
+                />
+                <img
+                  id="up-complit-2"
                   class="icon-dropup hidden"
                   src="asset/arrow-up.svg"
-                  alt=""
+                  onclick="uncheklistTugas('down-complit-2','up-complit-2')"
                 />
               </div>
             </div>
             <div class="complited-tugas d-flex justify-content-between">
               <div class="right-complited d-flex align-items-center my-1">
                 <div class="round">
-                  <input class="click-checkbox" type="checkbox" id="comlit3" />
-                  <label for="comlit3"></label>
+                  <input
+                    type="checkbox"
+                    id="complit3"
+                    checked
+                    onclick="clickCoret('complit3','nama-tugas-3')"
+                  />
+                  <label for="complit3"></label>
                 </div>
-                <h6 class="nama-tugas mx-2 mt-2">Launching Wazwez Website</h6>
+                <h6 id="nama-tugas-3" class="mx-2 mt-2 line-through">
+                  Launching Wazwez Website
+                </h6>
               </div>
 
               <div class="container-icon">
-                <img class="icon-dropdown" src="asset/dropdown.svg" alt="" />
                 <img
+                  id="down-complit-3"
+                  class="icon-dropdown"
+                  src="asset/dropdown.svg"
+                  onclick="uncheklistTugas('down-complit-3','up-complit-3')"
+                />
+                <img
+                  id="up-complit-3"
                   class="icon-dropup hidden"
                   src="asset/arrow-up.svg"
-                  alt=""
+                  onclick="uncheklistTugas('down-complit-3','up-complit-3')"
                 />
               </div>
             </div>
