@@ -44,6 +44,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .left-content .icon-user {
   width: 40px;
@@ -51,19 +52,6 @@ img {
   border: 1px solid rgb(255, 255, 255);
   border-radius: 50%;
   transition: 0.5s;
-}
-.left-content .icon-user:hover {
-  background: linear-gradient(
-    60deg,
-    #f79533,
-    #f37055,
-    #ff4479,
-    #a166ab,
-    #4eeaff,
-    #1098ad,
-    #07b39b,
-    #1ffa56
-  );
 }
 .left-content .icon-user img {
   width: 100%;
@@ -75,6 +63,31 @@ img {
   font-weight: 600;
   letter-spacing: 1.5px;
 }
+/* item dropdown user */
+.item-dropdown-user{
+  position: absolute;
+  font-weight: 600;
+  border: 1px solid #7a7f83;
+  text-align: center;
+  padding: 10px 50px 3px;
+  top: 30px;
+  right:-30px;
+  background-color: white;
+}
+.item-dropdown-user a{
+  text-decoration: none;
+  line-height: 0;
+}
+.item-dropdown-user p{
+  border-bottom: 1px solid black;
+  padding: 10px;
+  margin-right:-50px;
+  margin-left:-50px;
+}
+.item-dropdown-user a:hover{
+  font-family: "Courier New", Courier, monospace;
+}
+
 /* Main Style */
 main .container {
   height: 100%;
@@ -405,5 +418,12 @@ main .container-respons-add-tugas input[type="text"] {
   .left-content .icon-user {
     width: 45px;
     height: 45px;
+  }
+  .item-dropdown-user{
+    text-align: center;
+    top: 50px;
+    right:-60px;
+    background-color: white;
+    z-index: 99999;
   }
 }

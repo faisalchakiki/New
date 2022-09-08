@@ -54,16 +54,29 @@
                     id="down-user"
                     class="icon-dropdown"
                     src="asset/dropdown.svg"
-                    onclick="uncheklistTugas('down-user','up-user')"
+                    onclick="uncheklistTugas('down-user','up-user','item-drop-user')"
                   />
                   <img
                     id="up-user"
                     class="icon-dropup hidden"
                     src="asset/arrow-up.svg"
-                    onclick="uncheklistTugas('down-user','up-user')"
+                    onclick="uncheklistTugas('down-user','up-user','item-drop-user')"
                   />
                 </div>
               </div>
+              <!-- item dropdown user -->
+              <div class="item-dropdown-user hidden" id="item-drop-user">
+                <a href="">
+                  <p>Profil</p>
+                </a>
+                <a href="">
+                  <p>Settings</p>
+                </a>
+                <a href="">
+                  <p>Exit</p>
+                </a>
+              </div>
+              <!-- End item dropdown user -->
             </div>
           </div>
         </div>
@@ -143,7 +156,7 @@
             <div class="add-time-tugas ms-5">
               <img class="mb-3" src="../asset/calendar.svg" />
               <p class="ms-2">
-                <input type="text" placeholder="Tanggal & Waktu" required>
+                <input placeholder="Tanggal & Waktu" type="text" onfocus="(this.type='date')" id="date">
               </p>
               <button
                 class="btn-chek d-flex justify-content-center align-items-center"

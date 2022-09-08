@@ -48,3 +48,5 @@ function clickCoret(chek, text) {
     textLineThrough.classList.remove("line-through");
   }
 }
+
+
