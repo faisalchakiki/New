@@ -1,0 +1,42 @@
+Query-Query Wazwez App
+-untuk menampilkan navbar users
+SELECT u.avatar as avatar , d.full_name as name
+FROM users u JOIN detail_users d 
+ON(u.id = d.user_id);
+
+-untuk menampilkan data tasks (blum finish)
+SELECT id, nama_tugas, deskripsi, deadline  
+FROM tasks WHERE user_id = 1 AND finished - "no";
+
+-untuk menampilkan data tasks (finish)
+SELECT id, nama_tugas, deskripsi, deadline  
+FROM tasks WHERE user_id = 1 AND finished - "yes";
+
+-untuk menampilkan subtask pada masing-masing tasks
+SELECT t.id, s.nama_subtask
+FROM subtasks s JOIN tasks t
+ON(s.user_id = t.id) WHERE t.id = 1;
+
+-untuk menampilkan task yg selesai
+SELECT id, nama_tugas, deskripsi
+FROM tasks WHERE finished = 1;
+
+-untuk menambahkan data task
+INSERT INTO tasks ( user_id, nama_tugas, deskripsi, deadline)
+    VALUES ( '$userId','$namaTugas','$deskripsi','$deadline')
+
+-untuk menghapus task
+DELETE FROM tasks WHERE id = 1;
+
+-untuk merename task
+UPDATE tasks SET nama_tugas = "Set Name" WHERE id = 1;
+
+-untuk menghapus subtask
+DELETE FROM subtasks WHERE id = 1;
+
+-untuk menambahkan data subtask
+INSERT INTO tasks ( id_tugas, nama_subtask)
+    VALUES ( '$idTugas','$namaSubtask')
+
+
+

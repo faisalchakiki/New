@@ -1,0 +1,58 @@
+_USERS_
+create table users(
+
+PK    id int primary key auto_increment,
+      username varchar(225) UNIQUE KEY not null,
+      password varchar(255) not null,
+      avatar varchar(255)
+
+);
+
+_DETAIL USERS_
+create table detail_users(
+
+PK    id int primary key auto_increment,
+FK    user_id int UNIQUE KEY,
+      full_name varchar(100) not null,
+      address varchar(100),
+      gender ENUM('male', 'female'),
+      email varchar(100) UNIQUE KEY,
+      mobile_number varchar(20),
+      constraint fk_details_users
+      foreign key(user_id) references users(id)
+      on delete cascade on update cascade
+
+);
+
+_TASKS_
+create table tasks(
+
+PK    id int primary key auto_increment,
+FK    user_id int not null,
+      nama_tugas varchar(100) not null,
+      deskripsi text,
+      deadline date not null,
+      finished ENUM('yes','no') default 'no';
+      created_at timestamp default current_timestamp,
+      constraint fk_tasks_users
+      foreign key(user_id) references users(id)
+      on delete cascade on update cascade
+
+);
+
+_SUBTASKS_
+create table subtasks(
+
+PK    id int primary key auto_increment,
+FK    id_tugas int not null,
+      nama_subtask varchar(100),
+      constraint fk_subtasks_tasks
+      foreign key(id_tugas) references tasks(id)
+      on delete cascade on update cascade
+
+);
+
+
+nb:- table DETAIL_USERS berelasi ke table USERS merupakan relasi (one to one relationship)
+   - table TASKS berelasi ke table USERS merupakan relasi (one to many relationship)
+   - table SUBTASKS berelasi ke table TASKS merupakan relasi (one to many relationship)
