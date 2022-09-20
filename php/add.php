@@ -8,20 +8,18 @@ if (isset($_POST["submit"])) {
     $userId = 1;
 
     // Query Insert Tasks
-    $sqlInsertTask = "INSERT INTO tasks ( user_id,nama_tugas, deskripsi, deadline)
+    $sqlInsertTask = "INSERT INTO tasks ( user_id, nama_tugas, deskripsi, deadline)
     VALUES ( '$userId','$namaTugas','$deskripsi','$deadline')";
     mysqli_query($conn, $sqlInsertTask);
 
     // Cek Input
     if (mysqli_affected_rows($conn) > 0) {
-        echo "<script> 
-        alert('Query Success');
+        echo "<script>
         document.location.href ='index.php';
     </script>";
     } else {
         echo "<script> 
         alert('Query Fail');
-        document.location.href ='index.php';
     </script>";
         echo "mysqli_error($conn)";
     }

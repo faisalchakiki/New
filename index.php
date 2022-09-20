@@ -1,7 +1,7 @@
 <?php
 require "php/select.php";
 require "php/add.php";
-require "php/drop.php";
+require "php/switch-task.php";
 
 ?>
 
@@ -125,9 +125,9 @@ require "php/drop.php";
                 <form action="" method="post">
 
                     <section class="tambah-tugas ms-4">
-                        <input type="radio" name="add-tugas" id="" checked />
+                        <input type="radio" name="add-tugas" id="" checked>
                         <h6 class="nama-tugas created mx-2 mt-2">
-                            <input type="text" name="nama_tugas" placeholder="Masukan nama tugas" required>
+                            <input type="text" name="nama_tugas" placeholder="Masukan nama tugas">
                         </h6>
 
                     </section>
@@ -143,86 +143,119 @@ require "php/drop.php";
 
                         <img class="mb-3" src="asset/calendar.svg" />
                         <p class="ms-2">
-                            <input placeholder="Tanggal & Waktu" name="deadline" type="text" onfocus="(this.type='date')" id="date" required>
+                            <input placeholder="Tanggal & Waktu" name="deadline" type="text" onfocus="(this.type='date')" id="date">
                         </p>
 
-                        <button type="submit" name="submit" class="btn-chek d-flex justify-content-center align-items-center">
+                        <button name="submit" class="btn-chek d-flex justify-content-center align-items-center">
                             <img src="asset/Plus.svg" />
                             <p class="mt-3 ms-1 d-none d-sm-block">Tambah</p>
                         </button>
                     </div>
                 </form>
             </div>
-            <!-- End Tambahan Items -->
-            <?php foreach ($resultTasks as $value) : ?>
-                <div class="container-tugas" id="tugas-<?= $value["id"] ?>">
-                    <section class="tugas mt-1">
-                        <div class="content-tugas">
-                            <div class="round">
-                                <input class="click-checkbox" type="checkbox" id="task-<?= $value["id"] ?>" />
-                                <label for="task-<?= $value["id"] ?>"> </label>
-                            </div>
-                            <h6 class="nama-tugas-ku mx-2 mt-2"><?= $value["nama_tugas"] ?></h6>
-                            <div class="created d-md-block d-none"><?= $value["deadline"] ?></div>
-                            <div id="titik-tiga-<?= $value['id'] ?>" class="titik-tiga hidden" onclick="actionTitikTiga('titik-tiga-<?= $value['id'] ?>','action-titik-<?= $value['id'] ?>')">
-                                <img class="" src="asset/more-vertical.svg" onclick="actionTitikTiga('titik-tiga-<?= $value['id'] ?>','action-titik-<?= $value['id'] ?>')">
-                                <div class="action-titik-tiga hidden" id="action-titik-<?= $value['id'] ?>">
-                                    <div class="item-titik-tiga d-flex align-items-center edit">
-                                        <img src="asset/Edit.svg" />
-                                        <p class="ms-3 d-flex align-i"><a href="php/edit.php?id = <?= ($value['id']) ?>">Rename task</a></p>
-                                    </div>
-                                    <div class="item-titik-tiga d-flex align-items-center delete">
-                                        <img src="asset/Delete.svg" />
-                                        <p class="ms-3 d-flex align-i"><a href="php/drop.php?id=<?= $value['id'] ?>" onclick=" return confirm('yakin... dek?');">Delete task</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="drop-tugas me-3">
-                            <div class="container-icon">
-                                <img id="down-<?= $value["id"] ?>" class="icon-dropdown" src="asset/dropdown.svg" onclick="uncheklistTugas('down-<?= $value['id'] ?>' ,'up-<?= $value['id'] ?>','unchek-tugas-<?= $value['id'] ?>','titik-tiga-<?= $value['id'] ?>'),'action-<?= $value['id'] ?>' " />
+            <div class="hidden add-subtask container-respons-add-tugas ">
+                <form action="" method="post">
 
-                                <img id="up-<?= $value['id'] ?>" class="icon-dropup hidden" src="asset/arrow-up.svg" onclick="uncheklistTugas('down-<?= $value['id'] ?>' ,'up-<?= $value['id'] ?>','unchek-tugas-<?= $value['id'] ?>','titik-tiga-<?= $value['id'] ?>'),'action-<?= $value['id'] ?>' " />
+                    <section class="tambah-tugas ms-4">
+                        <input type="radio" name="add-tugas" id="" checked>
+                        <h6 class="nama-subtask created mx-2 mt-2">
+                            <input type="text" name="nama_tugas" placeholder="Masukan nama Subtask">
+                        </h6>
 
-                            </div>
-                        </div>
                     </section>
-
-                    <div class="desc-tugas ms-4"><?= $value['deskripsi'] ?></div>
-
-                    <!-- Uncheklist -->
-
-                    <div id="unchek-tugas-<?= $value['id'] ?>" class="uncheklist p-3 hidden">
-
-                        <div class="header-chek mb-1 d-flex justify-content-between align-items-center">
-                            <h6>Subtask</h6>
-                            <button class="btn-chek d-flex justify-content-center align-items-center">
-                                <img src="asset/Plus.svg" />
-                                <p class="mt-3 ms-1">Tambah</p>
-                            </button>
-                        </div>
-                        <div class="content-chek">
-                            <div class="chek-tugas">
-                                <div class="right-chek">
-                                    <div class="round">
-                                        <input class="click-checkbox" type="checkbox" id="design<?= $subtask['id_subtask'] ?>" onclick="clickCoret('design1','nama-design-<?= $subtask['id_subtask'] ?>')" />
-                                        <label for="design<?= $subtask['id_subtask'] ?>"></label>
-                                    </div>
-                                    <h6 id="nama-design-<?= $subtask['id_subtask'] ?>" class="mx-2 mt-2"> <?= $subtask['nama_tugas'] ?> </h6>
+                </form>
+            </div>
+            <!-- End Tambahan Items -->
+            <form action="" method="post">
+                <?php foreach ($resultTasks as $value) : ?>
+                    <div class="container-tugas" id="tugas-<?= $value["id"] ?>">
+                        <section class="tugas mt-1">
+                            <div class="content-tugas">
+                                <div class="round">
+                                    <input class="click-checkbox" type="checkbox" name="test[]" id="task-<?= $value["id"] ?>" value="<?= $value["nama_tugas"] ?>" onclick="clickCoret('task-<?= $value['id'] ?>' , 'nama-tugas-<?= $value['id'] ?>')">
+                                    <label for="task-<?= $value["id"] ?>"></label>
                                 </div>
-                                <div class="left-chek">
-                                    <img src="asset/trash.svg" />
+                                <h6 id="nama-tugas-<?= $value["id"] ?>" class="nama-tugas-ku mx-2 mt-2"><?= $value["nama_tugas"] ?></h6>
+                                <div class="created d-md-block d-none"><?= $value["deadline"] ?></div>
+                                <div id="titik-tiga-<?= $value['id'] ?>" class="titik-tiga hidden">
+
+                                    <img class="" src="asset/more-vertical.svg" id="titik-tiga-awal-<?= $value['id'] ?>" onclick="uncheklistTugas('titik-tiga-awal-<?= $value['id'] ?>','titik-tiga-akhir-<?= $value['id'] ?>','action-titik-<?= $value['id'] ?>')">
+
+                                    <img class="hidden" src="asset/titik-tiga.svg" id="titik-tiga-akhir-<?= $value['id'] ?>" onclick="uncheklistTugas('titik-tiga-awal-<?= $value['id'] ?>','titik-tiga-akhir-<?= $value['id'] ?>','action-titik-<?= $value['id'] ?>')">
+                                    <div class="action-titik-tiga hidden" id="action-titik-<?= $value['id'] ?>">
+
+                                        <div class="item-titik-tiga d-flex align-items-center edit">
+                                            <img src="asset/Edit.svg" />
+                                            <p class="ms-3 d-flex align-i"><a href="php/edit.php?id=<?= $value['id'] ?>">Edit task</a></p>
+                                        </div>
+                                        <div class="item-titik-tiga d-flex align-items-center delete">
+                                            <img src="asset/Delete.svg" />
+                                            <p class="ms-3 d-flex align-i"><a href="php/drop.php?id=<?= $value['id'] ?>" onclick=" return confirm('yakin...?');">Delete task</a></p>
+                                        </div>
+
+
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="drop-tugas me-3">
+                                <div class="container-icon">
+                                    <img id="down-<?= $value["id"] ?>" class="icon-dropdown" src="asset/dropdown.svg" onclick="uncheklistTugas('down-<?= $value['id'] ?>' ,'up-<?= $value['id'] ?>','unchek-tugas-<?= $value['id'] ?>','titik-tiga-<?= $value['id'] ?>'),'action-<?= $value['id'] ?>' " />
+                                    <img id="up-<?= $value['id'] ?>" class="icon-dropup hidden" src="asset/arrow-up.svg" onclick="uncheklistTugas('down-<?= $value['id'] ?>' ,'up-<?= $value['id'] ?>','unchek-tugas-<?= $value['id'] ?>','titik-tiga-<?= $value['id'] ?>'),'action-<?= $value['id'] ?>' " />
+
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="desc-tugas ms-4"><?= $value['deskripsi'] ?></div>
+
+                        <!-- Uncheklist -->
+
+                        <div id="unchek-tugas-<?= $value['id'] ?>" class="uncheklist p-3 hidden">
+
+                            <div class="header-chek mb-1 d-flex justify-content-between align-items-center">
+                                <h6>Subtask</h6>
+                                <div class="btn-subtask btn-chek d-flex justify-content-center align-items-center">
+                                    <img src="asset/Plus.svg" />    
+                                    <p class="mt-3 ms-1">Tambah</p>
+                                </div>
+                            </div>
+                            <?php foreach ($resultSubtasks as $subtask) {
+                                echo "<div class='content-chek'>
+                            <div class='chek-tugas'>
+                                <div class='right-chek'>
+                                    <div class='round'>
+                                        <input class='click-checkbox' type='checkbox' id= 'design-{$subtask["id"]}' 
+                                        onclick='clickCoret('design-{$subtask["id"]}','nama-design-{$subtask["id"]}')' />
+                                        <label for='design-{$subtask["id"]}'></label>
+                                    </div>
+                                    <h6 id='nama-design-{$subtask["id"]}' class='mx-2 mt-2'>{$subtask['nama_subtask']}</h6>
+                                </div>
+                                <div class='left-chek'>
+                                    <img src='asset/trash.svg'/>
+                                </div>
+                            </div>
+                          </div>";
+                            } ?>
                         </div>
+                        <!-- End Uncheklist -->
                     </div>
 
-                    <!-- End Uncheklist -->
-                </div>
-            <?php endforeach; ?>
-
-
+                <?php endforeach; ?>
+                <button class="button-finish" name="finish" style="width:fit-content;
+                height: 35px;
+                text-align: center;
+                border-radius: 60px;
+                font-size: 12px;
+                font-weight: 600;
+                margin-top: 11px;
+                padding: 5px;
+                background-color: white;
+                border: 0.1px solid #b8b8b8;
+                position: absolute;
+                right: 30px;">Finished</button>
+            </form>
             <footer class="footer-main">
                 <hr />
                 <div class="content-footer-main">
@@ -231,108 +264,84 @@ require "php/drop.php";
                         <img id="up-complit" class="icon-dropup hidden" src="asset/arrow-up.svg" onclick="uncheklistTugas('right-complit','up-complit','see-tugas-complit')" />
                     </div>
                     <p class="desc-footer-main mx-2 mt-3">
-                        Terselesaikan <span class="colored">( 3 tugas )</span>
+                        Terselesaikan <span class="colored">(<?= count((array)$resultTasks) ?>)</span>
                     </p>
                 </div>
                 <div id="see-tugas-complit" class="see-complited hidden">
+                    <?php foreach ($resultTasksSuccess as $row) : ?>
+                        <div class="container-tugas" id="tugas-<?= $row["id"] ?>">
+                            <section class="tugas mt-1">
+                                <div class="content-tugas">
+                                    <div class="round">
 
-                    <div class="container-tugas" id="tugas-n">
-                        <section class="tugas mt-1">
-                            <div class="content-tugas">
-                                <div class="round">
-                                    <input class="click-checkbox" type="checkbox" id="task-n" checked
-                                    onclick="clickCoret('task-n','name-task-n')" >
-                                    <label for="task-n" ></label>
-                                </div>
-                                <h6 class="nama-tugas-ku mx-2 mt-2 line-through" id="name-task-n">Requirements Detail</h6>
-                                <div id="titik-tiga-n" class="titik-tiga hidden" onclick="actionTitikTiga('titik-tiga-n','action-titik-n')">
-                                    <img class="" src="asset/more-vertical.svg" onclick="actionTitikTiga('titik-tiga-n','action-titik-n')">
-                                    <div class="action-titik-tiga hidden" id="action-titik-n">
-                                        <div class="item-titik-tiga d-flex align-items-center edit">
-                                            <img src="asset/Edit.svg" />
-                                            <p class="ms-3 d-flex align-i"><a href="php/edit.php?id = <?= ($value['id']) ?>">Rename task</a></p>
-                                        </div>
-                                        <div class="item-titik-tiga d-flex align-items-center delete">
-                                            <img src="asset/Delete.svg" />
-                                            <p class="ms-3 d-flex align-i"><a href="php/drop.php?id=n" onclick=" return confirm('yakin... dek?');">Delete task</a></p>
+                                        <input class="click-checkbox" type="checkbox" name="test" id="task-<?= $row["id"] ?>" onclick="clickCoret('task-<?= $row['id'] ?>' , 'nama-tugas-<?= $row['id'] ?>')" checked="<?= $row['finished'] ?>">
+                                        <label for="task-<?= $row["id"] ?>"> </label>
+
+                                    </div>
+                                    <h6 contenteditable="true" id="nama-tugas-<?= $row["id"] ?>" class="nama-tugas-ku mx-2 mt-2 line-through"><?= $row["nama_tugas"] ?></h6>
+                                    <div id="titik-tiga-<?= $row['id'] ?>" class="titik-tiga hidden">
+
+                                        <img class="" src="asset/more-vertical.svg" id="titik-tiga-awal-<?= $row['id'] ?>" onclick="uncheklistTugas('titik-tiga-awal-<?= $row['id'] ?>','titik-tiga-akhir-<?= $row['id'] ?>','action-titik-<?= $row['id'] ?>')">
+                                        <img class="hidden" src="asset/titik-tiga.svg" id="titik-tiga-akhir-<?= $row['id'] ?>" onclick="uncheklistTugas('titik-tiga-awal-<?= $row['id'] ?>','titik-tiga-akhir-<?= $row['id'] ?>','action-titik-<?= $row['id'] ?>')">
+                                        <div class="action-titik-tiga hidden" id="action-titik-<?= $row['id'] ?>">
+
+                                            <div class="item-titik-tiga d-flex align-items-center edit">
+                                                <img src="asset/Edit.svg" />
+                                                <p class="ms-3 d-flex align-i"><a href="php/edit.php?id = <?= ($row['id']) ?>">Rename task</a></p>
+                                            </div>
+                                            <div class="item-titik-tiga d-flex align-items-center delete">
+                                                <img src="asset/Delete.svg" />
+                                                <p class="ms-3 d-flex align-i"><a href="php/drop.php?id=<?= $row['id'] ?>" onclick=" return confirm('yakin...?');">Delete task</a></p>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="drop-tugas me-3">
+                                    <div class="container-icon">
+                                        <img id="down-<?= $row['id'] ?>" class="icon-dropdown" src="asset/dropdown.svg" onclick="uncheklistTugas('down-<?= $row['id'] ?>' ,'up-<?= $row['id'] ?>','unchek-tugas-<?= $row['id'] ?>','titik-tiga-<?= $row['id'] ?>'),'action-<?= $row['id'] ?>' " />
 
-                            <div class="drop-tugas me-3">
-                                <div class="container-icon">
-                                    <img id="down-n" class="icon-dropdown" src="asset/dropdown.svg" onclick="uncheklistTugas('down-n' ,'up-n','unchek-tugas-n','titik-tiga-n'),'action-n' " />
+                                        <img id="up-<?= $row['id'] ?>" class="icon-dropup hidden" src="asset/arrow-up.svg" onclick="uncheklistTugas('down-<?= $row['id'] ?>' ,'up-<?= $row['id'] ?>','unchek-tugas-<?= $row['id'] ?>','titik-tiga-<?= $row['id'] ?>'),'action-<?= $row['id'] ?>' " />
 
-                                    <img id="up-n" class="icon-dropup hidden" src="asset/arrow-up.svg" onclick="uncheklistTugas('down-n' ,'up-n','unchek-tugas-n','titik-tiga-n'),'action-n' " />
-
-                                </div>
-                            </div>
-                        </section>
-
-                        <div class="desc-tugas ms-4">new deskripsi</div>
-
-                        <!-- Uncheklist -->
-
-                        <div id="unchek-tugas-n" class="uncheklist p-3 hidden">
-
-                            <div class="header-chek mb-1 d-flex justify-content-between align-items-center">
-                                <h6>Subtask</h6>
-                                <button class="btn-chek d-flex justify-content-center align-items-center">
-                                    <img src="asset/Plus.svg" />
-                                    <p class="mt-3 ms-1">Tambah</p>
-                                </button>
-                            </div>
-                            <div class="content-chek">
-                                <div class="chek-tugas">
-                                    <div class="right-chek">
-                                        <div class="round">
-                                            <input class="click-checkbox" type="checkbox" id="design<?= $subtask['id_subtask'] ?>" onclick="clickCoret('design1','nama-design-<?= $subtask['id_subtask'] ?>')" />
-                                            <label for="design<?= $subtask['id_subtask'] ?>"></label>
-                                        </div>
-                                        <h6 id="nama-design-<?= $subtask['id_subtask'] ?>" class="mx-2 mt-2"> <?= $subtask['nama_tugas'] ?> </h6>
-                                    </div>
-                                    <div class="left-chek">
-                                        <img src="asset/trash.svg" />
                                     </div>
                                 </div>
+                            </section>
+
+                            <div class="desc-tugas ms-4"><?= $row['deskripsi'] ?></div>
+
+                            <!-- Uncheklist -->
+
+                            <div id="unchek-tugas-<?= $row['id'] ?>" class="uncheklist p-3 hidden">
+
+                                <div class="header-chek mb-1 d-flex justify-content-between align-items-center">
+                                    <h6>Subtask</h6>
+                                    <div class="btn-subtask btn-chek d-flex justify-content-center align-items-center">
+                                        <img src="asset/Plus.svg" />
+                                        <p class="mt-3 ms-1">Tambah</p>
+                                    </div>
+                                </div>
+                                <?php foreach ($resultSubtasks as $subtask) {
+                                    echo "<div class='content-chek'>
+                        <div class='chek-tugas'>
+                            <div class='right-chek'>
+                                <div class='round'>
+                                    <input class='click-checkbox' type='checkbox' id= 'design-{$subtask["id"]}' 
+                                    onclick='clickCoret('design-{$subtask["id"]}','nama-design-{$subtask["id"]}')' />
+                                    <label for='design-{$subtask["id"]}'></label>
+                                </div>
+                                <h6 id='nama-design-{$subtask["id"]}' class='mx-2 mt-2'>{$subtask['nama_subtask']}</h6>
+                            </div>
+                            <div class='left-chek'>
+                                <img src='asset/trash.svg'/>
                             </div>
                         </div>
-
-                        <!-- End Uncheklist -->
-                    </div>
-                    <div class="complited-tugas d-flex justify-content-between">
-                        <div class="right-complited d-flex align-items-center my-1">
-                            <div class="round">
-                                <input class="click-checkbox" type="checkbox" id="complit2" checked checked onclick="clickCoret('complit2','nama-tugas-2')" />
-                                <label for="complit2"></label>
+                      </div>";
+                                } ?>
                             </div>
-                            <h6 id="nama-tugas-2" class="mx-2 mt-2 line-through">
-                                Backlog Teams
-                            </h6>
+                            <!-- End Uncheklist -->
                         </div>
-
-                        <div class="container-icon me-3">
-                            <img id="down-complit-2" class="icon-dropdown" src="asset/dropdown.svg" onclick="uncheklistTugas('down-complit-2','up-complit-2')" />
-                            <img id="up-complit-2" class="icon-dropup hidden" src="asset/arrow-up.svg" onclick="uncheklistTugas('down-complit-2','up-complit-2')" />
-                        </div>
-                    </div>
-                    <div class="complited-tugas d-flex justify-content-between">
-                        <div class="right-complited d-flex align-items-center my-1">
-                            <div class="round">
-                                <input type="checkbox" id="complit3" checked onclick="clickCoret('complit3','nama-tugas-3')" />
-                                <label for="complit3"></label>
-                            </div>
-                            <h6 id="nama-tugas-3" class="mx-2 mt-2 line-through">
-                                Meeting With Teams
-                            </h6>
-                        </div>
-
-                        <div class="container-icon me-3">
-                            <img id="down-complit-3" class="icon-dropdown" src="asset/dropdown.svg" onclick="uncheklistTugas('down-complit-3','up-complit-3')" />
-                            <img id="up-complit-3" class="icon-dropup hidden" src="asset/arrow-up.svg" onclick="uncheklistTugas('down-complit-3','up-complit-3')" />
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </footer>
         </div>

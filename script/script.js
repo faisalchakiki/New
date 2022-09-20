@@ -6,6 +6,12 @@ clickButtonTugas.addEventListener("click", function () {
   textDemoTugas.classList.toggle("hidden");
 });
 
+const clickTambahSubtask= document.querySelector(".btn-subtask");
+clickTambahSubtask.addEventListener("click", function () {
+  const textDemoSubtask = document.querySelector(".add-subtask");
+  textDemoSubtask.classList.toggle("hidden");
+});
+
 // Action By Tanggal
 const clickByTanggal = document.querySelector(".button-by-tanggal");
 clickByTanggal.addEventListener("click", function () {
@@ -18,15 +24,6 @@ clickByTanggal.addEventListener("click", function () {
   const arrowIcons = document.querySelector(".dropup-btn");
   arrowIcons.classList.toggle("hidden");
 });
-
-// Action titik Tiga
-function actionTitikTiga (titik , action ){
-  const iconTitikTiga = document.getElementById(titik);
-  iconTitikTiga.addEventListener("click", function(){
-    const actionTitik = document.getElementById(action);
-    actionTitik.classList.toggle("hidden");
-  })
-}
 
 // Action Uncheklist 
 function uncheklistTugas(dropdown, dropup, result, items) {
@@ -48,8 +45,5 @@ function clickCoret(chek, text) {
     textLineThrough.classList.add("line-through");
   } else {
     textLineThrough.classList.remove("line-through");
-  }
 }
-
-
-
+}

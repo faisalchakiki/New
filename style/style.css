@@ -194,6 +194,20 @@ main .desc-tugas {
   font-weight: 600;
   padding-left: 10px;
 }
+/* main .button-finish{
+  width:fit-content;
+  height: 35px;
+  text-align: center;
+  border-radius: 60px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 11px;
+  padding: 5px;
+  background-color: white;
+  border: 0.1px solid #b8b8b8;
+  position: absolute;
+  right: 30px;
+} */
 main .footer-main {
   margin-top: 20%;
   position: relative;
@@ -377,13 +391,19 @@ main .container-respons-add-tugas input[type="text"] {
 .action-titik-tiga .item-titik-tiga:nth-child(1) {
   margin-bottom: -20px;
 }
-.action-titik-tiga p a{
+.action-titik-tiga p{
   margin: 20px 0 10px;
+}
+.action-titik-tiga a{
   text-decoration: none;
+  color: black;
 }
 .action-titik-tiga .item-titik-tiga:hover{
   cursor: pointer;
   font-family: 'Courier New', Courier, monospace;
+}
+.uncheklist .btn-subtask{
+  cursor: pointer;
 }
 /* See Complited */
 .complited-tugas h6 {
